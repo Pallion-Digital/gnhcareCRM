@@ -25,6 +25,7 @@ import { DeleteLocalAuthorityArgs } from "./DeleteLocalAuthorityArgs";
 import { LocalAuthorityFindManyArgs } from "./LocalAuthorityFindManyArgs";
 import { LocalAuthorityFindUniqueArgs } from "./LocalAuthorityFindUniqueArgs";
 import { LocalAuthority } from "./LocalAuthority";
+import { ChildProfile } from "../../childProfile/base/ChildProfile";
 import { LocalAuthorityService } from "../localAuthority.service";
 
 @graphql.Resolver(() => LocalAuthority)
@@ -96,7 +97,15 @@ export class LocalAuthorityResolverBase {
   ): Promise<LocalAuthority> {
     return await this.service.create({
       ...args,
-      data: args.data,
+      data: {
+        ...args.data,
+
+        childProfiles: args.data.childProfiles
+          ? {
+              connect: args.data.childProfiles,
+            }
+          : undefined,
+      },
     });
   }
 
@@ -113,7 +122,15 @@ export class LocalAuthorityResolverBase {
     try {
       return await this.service.update({
         ...args,
-        data: args.data,
+        data: {
+          ...args.data,
+
+          childProfiles: args.data.childProfiles
+            ? {
+                connect: args.data.childProfiles,
+              }
+            : undefined,
+        },
       });
     } catch (error) {
       if (isRecordNotFoundError(error)) {
@@ -144,5 +161,23 @@ export class LocalAuthorityResolverBase {
       }
       throw error;
     }
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => ChildProfile, { nullable: true })
+  @nestAccessControl.UseRoles({
+    resource: "ChildProfile",
+    action: "read",
+    possession: "any",
+  })
+  async childProfiles(
+    @graphql.Parent() parent: LocalAuthority
+  ): Promise<ChildProfile | null> {
+    const result = await this.service.getChildProfiles(parent.id);
+
+    if (!result) {
+      return null;
+    }
+    return result;
   }
 }

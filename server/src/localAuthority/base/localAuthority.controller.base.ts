@@ -48,12 +48,33 @@ export class LocalAuthorityControllerBase {
     @common.Body() data: LocalAuthorityCreateInput
   ): Promise<LocalAuthority> {
     return await this.service.create({
-      data: data,
+      data: {
+        ...data,
+
+        childProfiles: data.childProfiles
+          ? {
+              connect: data.childProfiles,
+            }
+          : undefined,
+      },
       select: {
+        address_1: true,
+        address_2: true,
+
+        childProfiles: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
+        email: true,
         id: true,
         name: true,
+        phoneNumber: true,
+        postCode: true,
         updatedAt: true,
+        website: true,
       },
     });
   }
@@ -73,10 +94,23 @@ export class LocalAuthorityControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        address_1: true,
+        address_2: true,
+
+        childProfiles: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
+        email: true,
         id: true,
         name: true,
+        phoneNumber: true,
+        postCode: true,
         updatedAt: true,
+        website: true,
       },
     });
   }
@@ -97,10 +131,23 @@ export class LocalAuthorityControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        address_1: true,
+        address_2: true,
+
+        childProfiles: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
+        email: true,
         id: true,
         name: true,
+        phoneNumber: true,
+        postCode: true,
         updatedAt: true,
+        website: true,
       },
     });
     if (result === null) {
@@ -128,12 +175,33 @@ export class LocalAuthorityControllerBase {
     try {
       return await this.service.update({
         where: params,
-        data: data,
+        data: {
+          ...data,
+
+          childProfiles: data.childProfiles
+            ? {
+                connect: data.childProfiles,
+              }
+            : undefined,
+        },
         select: {
+          address_1: true,
+          address_2: true,
+
+          childProfiles: {
+            select: {
+              id: true,
+            },
+          },
+
           createdAt: true,
+          email: true,
           id: true,
           name: true,
+          phoneNumber: true,
+          postCode: true,
           updatedAt: true,
+          website: true,
         },
       });
     } catch (error) {
@@ -162,10 +230,23 @@ export class LocalAuthorityControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          address_1: true,
+          address_2: true,
+
+          childProfiles: {
+            select: {
+              id: true,
+            },
+          },
+
           createdAt: true,
+          email: true,
           id: true,
           name: true,
+          phoneNumber: true,
+          postCode: true,
           updatedAt: true,
+          website: true,
         },
       });
     } catch (error) {

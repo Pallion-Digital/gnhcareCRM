@@ -11,10 +11,48 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, IsOptional } from "class-validator";
+import {
+  IsString,
+  IsOptional,
+  ValidateNested,
+  IsDate,
+  IsInt,
+} from "class-validator";
+import { ChildProfile } from "../../childProfile/base/ChildProfile";
 import { Type } from "class-transformer";
 @ObjectType()
 class LocalAuthority {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  address_1!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  address_2!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => ChildProfile,
+  })
+  @ValidateNested()
+  @Type(() => ChildProfile)
+  @IsOptional()
+  childProfiles?: ChildProfile | null;
+
   @ApiProperty({
     required: true,
   })
@@ -29,7 +67,50 @@ class LocalAuthority {
   })
   @IsString()
   @Field(() => String)
+  email!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
   id!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  name!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  phoneNumber!: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  postCode!: number | null;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @Field(() => Date)
+  updatedAt!: Date;
 
   @ApiProperty({
     required: false,
@@ -40,14 +121,6 @@ class LocalAuthority {
   @Field(() => String, {
     nullable: true,
   })
-  name!: string | null;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsDate()
-  @Type(() => Date)
-  @Field(() => Date)
-  updatedAt!: Date;
+  website!: string | null;
 }
 export { LocalAuthority };
