@@ -7,12 +7,8 @@ export type UnitWhereInput = {
   additionalUnitInfomation?: StringNullableFilter;
   childProfile?: ChildProfileWhereUniqueInput;
   id?: StringFilter;
-<<<<<<< HEAD
-  name?: IntNullableFilter;
-=======
   name?: StringFilter;
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
-  numberOfBedrooms?: IntNullableFilter;
-  numberOfVacantRooms?: IntNullableFilter;
+  numberOfBedrooms?: StringNullableFilter;
+  numberOfVacantRooms?: StringNullableFilter;
   postCode?: IntNullableFilter;
 };

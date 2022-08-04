@@ -55,16 +55,6 @@ class UnitWhereInput {
 
   @ApiProperty({
     required: false,
-<<<<<<< HEAD
-    type: IntNullableFilter,
-  })
-  @Type(() => IntNullableFilter)
-  @IsOptional()
-  @Field(() => IntNullableFilter, {
-    nullable: true,
-  })
-  name?: IntNullableFilter;
-=======
     type: StringFilter,
   })
   @Type(() => StringFilter)
@@ -73,29 +63,28 @@ class UnitWhereInput {
     nullable: true,
   })
   name?: StringFilter;
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
 
   @ApiProperty({
     required: false,
-    type: IntNullableFilter,
+    type: StringNullableFilter,
   })
-  @Type(() => IntNullableFilter)
+  @Type(() => StringNullableFilter)
   @IsOptional()
-  @Field(() => IntNullableFilter, {
+  @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  numberOfBedrooms?: IntNullableFilter;
+  numberOfBedrooms?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
-    type: IntNullableFilter,
+    type: StringNullableFilter,
   })
-  @Type(() => IntNullableFilter)
+  @Type(() => StringNullableFilter)
   @IsOptional()
-  @Field(() => IntNullableFilter, {
+  @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  numberOfVacantRooms?: IntNullableFilter;
+  numberOfVacantRooms?: StringNullableFilter;
 
   @ApiProperty({
     required: false,

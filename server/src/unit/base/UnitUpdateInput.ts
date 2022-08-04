@@ -41,16 +41,6 @@ class UnitUpdateInput {
 
   @ApiProperty({
     required: false,
-<<<<<<< HEAD
-    type: Number,
-  })
-  @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  name?: number | null;
-=======
     type: String,
   })
   @IsString()
@@ -59,29 +49,28 @@ class UnitUpdateInput {
     nullable: true,
   })
   name?: string;
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
 
   @ApiProperty({
     required: false,
-    type: Number,
+    type: String,
   })
-  @IsInt()
+  @IsString()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => String, {
     nullable: true,
   })
-  numberOfBedrooms?: number | null;
+  numberOfBedrooms?: string | null;
 
   @ApiProperty({
     required: false,
-    type: Number,
+    type: String,
   })
-  @IsInt()
+  @IsString()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => String, {
     nullable: true,
   })
-  numberOfVacantRooms?: number | null;
+  numberOfVacantRooms?: string | null;
 
   @ApiProperty({
     required: false,

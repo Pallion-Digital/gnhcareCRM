@@ -14,13 +14,9 @@ const CREATE_INPUT = {
   additionalUnitInfomation: "exampleAdditionalUnitInfomation",
   createdAt: new Date(),
   id: "exampleId",
-<<<<<<< HEAD
-  name: 42,
-=======
   name: "exampleName",
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
-  numberOfBedrooms: 42,
-  numberOfVacantRooms: 42,
+  numberOfBedrooms: "exampleNumberOfBedrooms",
+  numberOfVacantRooms: "exampleNumberOfVacantRooms",
   postCode: 42,
   updatedAt: new Date(),
 };
@@ -28,13 +24,9 @@ const CREATE_RESULT = {
   additionalUnitInfomation: "exampleAdditionalUnitInfomation",
   createdAt: new Date(),
   id: "exampleId",
-<<<<<<< HEAD
-  name: 42,
-=======
   name: "exampleName",
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
-  numberOfBedrooms: 42,
-  numberOfVacantRooms: 42,
+  numberOfBedrooms: "exampleNumberOfBedrooms",
+  numberOfVacantRooms: "exampleNumberOfVacantRooms",
   postCode: 42,
   updatedAt: new Date(),
 };
@@ -43,13 +35,9 @@ const FIND_MANY_RESULT = [
     additionalUnitInfomation: "exampleAdditionalUnitInfomation",
     createdAt: new Date(),
     id: "exampleId",
-<<<<<<< HEAD
-    name: 42,
-=======
     name: "exampleName",
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
-    numberOfBedrooms: 42,
-    numberOfVacantRooms: 42,
+    numberOfBedrooms: "exampleNumberOfBedrooms",
+    numberOfVacantRooms: "exampleNumberOfVacantRooms",
     postCode: 42,
     updatedAt: new Date(),
   },
@@ -58,13 +46,9 @@ const FIND_ONE_RESULT = {
   additionalUnitInfomation: "exampleAdditionalUnitInfomation",
   createdAt: new Date(),
   id: "exampleId",
-<<<<<<< HEAD
-  name: 42,
-=======
   name: "exampleName",
->>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
-  numberOfBedrooms: 42,
-  numberOfVacantRooms: 42,
+  numberOfBedrooms: "exampleNumberOfBedrooms",
+  numberOfVacantRooms: "exampleNumberOfVacantRooms",
   postCode: 42,
   updatedAt: new Date(),
 };
