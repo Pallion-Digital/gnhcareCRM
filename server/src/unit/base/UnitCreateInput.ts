@@ -40,15 +40,12 @@ class UnitCreateInput {
   childProfile?: ChildProfileWhereUniqueInput | null;
 
   @ApiProperty({
-    required: false,
-    type: Number,
+    required: true,
+    type: String,
   })
-  @IsInt()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  name?: number | null;
+  @IsString()
+  @Field(() => String)
+  name!: string;
 
   @ApiProperty({
     required: false,

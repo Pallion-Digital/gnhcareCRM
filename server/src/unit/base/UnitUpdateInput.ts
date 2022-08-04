@@ -41,14 +41,14 @@ class UnitUpdateInput {
 
   @ApiProperty({
     required: false,
-    type: Number,
+    type: String,
   })
-  @IsInt()
+  @IsString()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => String, {
     nullable: true,
   })
-  name?: number | null;
+  name?: string;
 
   @ApiProperty({
     required: false,

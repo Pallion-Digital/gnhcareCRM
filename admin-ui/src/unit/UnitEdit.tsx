@@ -28,7 +28,7 @@ export const UnitEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectInput optionText={ChildProfileTitle} />
         </ReferenceInput>
-        <NumberInput step={1} label="Name" source="name" />
+        <TextInput label="Name" source="name" />
         <NumberInput
           step={1}
           label="Number of Bedrooms"
