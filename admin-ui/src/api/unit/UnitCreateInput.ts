@@ -3,7 +3,7 @@ import { ChildProfileWhereUniqueInput } from "../childProfile/ChildProfileWhereU
 export type UnitCreateInput = {
   additionalUnitInfomation?: string | null;
   childProfile?: ChildProfileWhereUniqueInput | null;
-  name?: number | null;
+  name: string;
   numberOfBedrooms?: number | null;
   numberOfVacantRooms?: number | null;
   postCode?: number | null;

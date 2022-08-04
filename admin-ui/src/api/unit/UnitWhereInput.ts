@@ -7,7 +7,7 @@ export type UnitWhereInput = {
   additionalUnitInfomation?: StringNullableFilter;
   childProfile?: ChildProfileWhereUniqueInput;
   id?: StringFilter;
-  name?: IntNullableFilter;
+  name?: StringFilter;
   numberOfBedrooms?: IntNullableFilter;
   numberOfVacantRooms?: IntNullableFilter;
   postCode?: IntNullableFilter;
