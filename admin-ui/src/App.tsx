@@ -13,6 +13,14 @@ import { LocalAuthorityList } from "./localAuthority/LocalAuthorityList";
 import { LocalAuthorityCreate } from "./localAuthority/LocalAuthorityCreate";
 import { LocalAuthorityEdit } from "./localAuthority/LocalAuthorityEdit";
 import { LocalAuthorityShow } from "./localAuthority/LocalAuthorityShow";
+import { ChildProfileList } from "./childProfile/ChildProfileList";
+import { ChildProfileCreate } from "./childProfile/ChildProfileCreate";
+import { ChildProfileEdit } from "./childProfile/ChildProfileEdit";
+import { ChildProfileShow } from "./childProfile/ChildProfileShow";
+import { UnitList } from "./unit/UnitList";
+import { UnitCreate } from "./unit/UnitCreate";
+import { UnitEdit } from "./unit/UnitEdit";
+import { UnitShow } from "./unit/UnitShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -52,6 +60,20 @@ const App = (): React.ReactElement => {
           edit={LocalAuthorityEdit}
           create={LocalAuthorityCreate}
           show={LocalAuthorityShow}
+        />
+        <Resource
+          name="ChildProfile"
+          list={ChildProfileList}
+          edit={ChildProfileEdit}
+          create={ChildProfileCreate}
+          show={ChildProfileShow}
+        />
+        <Resource
+          name="Unit"
+          list={UnitList}
+          edit={UnitEdit}
+          create={UnitCreate}
+          show={UnitShow}
         />
       </Admin>
     </div>

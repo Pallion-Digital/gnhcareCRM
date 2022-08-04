@@ -11,30 +11,54 @@ import { LocalAuthorityService } from "../localAuthority.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  address_1: "exampleAddress_1",
+  address_2: "exampleAddress_2",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  phoneNumber: "examplePhoneNumber",
+  postCode: 42,
   updatedAt: new Date(),
+  website: "exampleWebsite",
 };
 const CREATE_RESULT = {
+  address_1: "exampleAddress_1",
+  address_2: "exampleAddress_2",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  phoneNumber: "examplePhoneNumber",
+  postCode: 42,
   updatedAt: new Date(),
+  website: "exampleWebsite",
 };
 const FIND_MANY_RESULT = [
   {
+    address_1: "exampleAddress_1",
+    address_2: "exampleAddress_2",
     createdAt: new Date(),
+    email: "exampleEmail",
     id: "exampleId",
     name: "exampleName",
+    phoneNumber: "examplePhoneNumber",
+    postCode: 42,
     updatedAt: new Date(),
+    website: "exampleWebsite",
   },
 ];
 const FIND_ONE_RESULT = {
+  address_1: "exampleAddress_1",
+  address_2: "exampleAddress_2",
   createdAt: new Date(),
+  email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  phoneNumber: "examplePhoneNumber",
+  postCode: 42,
   updatedAt: new Date(),
+  website: "exampleWebsite",
 };
 
 const service = {

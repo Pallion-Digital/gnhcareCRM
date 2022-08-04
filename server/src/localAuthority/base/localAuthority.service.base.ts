@@ -10,7 +10,7 @@ https://docs.amplication.com/docs/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "nestjs-prisma";
-import { Prisma, LocalAuthority } from "@prisma/client";
+import { Prisma, LocalAuthority, ChildProfile } from "@prisma/client";
 
 export class LocalAuthorityServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -45,5 +45,13 @@ export class LocalAuthorityServiceBase {
     args: Prisma.SelectSubset<T, Prisma.LocalAuthorityDeleteArgs>
   ): Promise<LocalAuthority> {
     return this.prisma.localAuthority.delete(args);
+  }
+
+  async getChildProfiles(parentId: string): Promise<ChildProfile | null> {
+    return this.prisma.localAuthority
+      .findUnique({
+        where: { id: parentId },
+      })
+      .childProfiles();
   }
 }

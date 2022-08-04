@@ -11,12 +11,59 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { StringFilter } from "../../util/StringFilter";
-import { Type } from "class-transformer";
-import { IsOptional } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { Type } from "class-transformer";
+import { IsOptional, ValidateNested } from "class-validator";
+import { ChildProfileWhereUniqueInput } from "../../childProfile/base/ChildProfileWhereUniqueInput";
+import { StringFilter } from "../../util/StringFilter";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
 @InputType()
 class LocalAuthorityWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  address_1?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  address_2?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => ChildProfileWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => ChildProfileWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ChildProfileWhereUniqueInput, {
+    nullable: true,
+  })
+  childProfiles?: ChildProfileWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  email?: StringFilter;
+
   @ApiProperty({
     required: false,
     type: StringFilter,
@@ -30,6 +77,39 @@ class LocalAuthorityWhereInput {
 
   @ApiProperty({
     required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  name?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  phoneNumber?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: IntNullableFilter,
+  })
+  @Type(() => IntNullableFilter)
+  @IsOptional()
+  @Field(() => IntNullableFilter, {
+    nullable: true,
+  })
+  postCode?: IntNullableFilter;
+
+  @ApiProperty({
+    required: false,
     type: StringNullableFilter,
   })
   @Type(() => StringNullableFilter)
@@ -37,6 +117,6 @@ class LocalAuthorityWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  name?: StringNullableFilter;
+  website?: StringNullableFilter;
 }
 export { LocalAuthorityWhereInput };

@@ -238,5 +238,245 @@
     "resource": "LocalAuthority",
     "action": "read:any",
     "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "ChildProfile",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ChildProfile",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "ChildProfile",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ChildProfile",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "ChildProfile",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ChildProfile",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "ChildProfile",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ChildProfile",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "ChildProfile",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ChildProfile",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "ChildProfile",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ChildProfile",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "ChildProfile",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ChildProfile",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "ChildProfile",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ChildProfile",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "ChildProfile",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ChildProfile",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "ChildProfile",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ChildProfile",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Unit",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Unit",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "Unit",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Unit",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Unit",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Unit",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "Unit",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Unit",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Unit",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Unit",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "Unit",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Unit",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Unit",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Unit",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "Unit",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Unit",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Unit",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Unit",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "staff",
+    "resource": "Unit",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Unit",
+    "action": "read:any",
+    "attributes": "*"
   }
 ]

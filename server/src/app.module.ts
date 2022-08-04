@@ -3,6 +3,8 @@ import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
 import { LocalAuthorityModule } from "./localAuthority/localAuthority.module";
+import { ChildProfileModule } from "./childProfile/childProfile.module";
+import { UnitModule } from "./unit/unit.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { HealthModule } from "./health/health.module";
@@ -17,6 +19,8 @@ import { GraphQLModule } from "@nestjs/graphql";
   imports: [
     UserModule,
     LocalAuthorityModule,
+    ChildProfileModule,
+    UnitModule,
     ACLModule,
     AuthModule,
     HealthModule,

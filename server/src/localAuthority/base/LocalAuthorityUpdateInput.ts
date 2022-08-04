@@ -11,7 +11,9 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional } from "class-validator";
+import { IsString, IsOptional, ValidateNested, IsInt } from "class-validator";
+import { ChildProfileWhereUniqueInput } from "../../childProfile/base/ChildProfileWhereUniqueInput";
+import { Type } from "class-transformer";
 @InputType()
 class LocalAuthorityUpdateInput {
   @ApiProperty({
@@ -23,6 +25,84 @@ class LocalAuthorityUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  name?: string | null;
+  address_1?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  address_2?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => ChildProfileWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => ChildProfileWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ChildProfileWhereUniqueInput, {
+    nullable: true,
+  })
+  childProfiles?: ChildProfileWhereUniqueInput | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  email?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  name?: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  phoneNumber?: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  postCode?: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  website?: string | null;
 }
 export { LocalAuthorityUpdateInput };
