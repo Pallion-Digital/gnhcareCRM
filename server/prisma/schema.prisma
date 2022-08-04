@@ -1,0 +1,78 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     String[]
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model LocalAuthority {
+  address_1       String?
+  address_2       String?
+  childProfiles   ChildProfile? @relation(fields: [childProfilesId], references: [id])
+  childProfilesId String?
+  createdAt       DateTime      @default(now())
+  email           String        @unique
+  id              String        @id @default(cuid())
+  name            String        @unique
+  phoneNumber     String        @unique
+  postCode        Int?
+  updatedAt       DateTime      @updatedAt
+  website         String?
+}
+
+model ChildProfile {
+  allergies             String?
+  clientName            String?                                @unique
+  createdAt             DateTime                               @default(now())
+  dateOfBirth           DateTime?
+  floatingSupport       EnumChildProfileFloatingSupport?
+  gender                EnumChildProfileGender?
+  id                    String                                 @id @default(cuid())
+  localAuthorities      LocalAuthority[]
+  nameOfKeyWorker       String?
+  semiIndependentLiving EnumChildProfileSemiIndependentLiving?
+  startDate             DateTime?
+  units                 Unit[]
+  updatedAt             DateTime                               @updatedAt
+}
+
+model Unit {
+  additionalUnitInfomation String?
+  childProfile             ChildProfile? @relation(fields: [childProfileId], references: [id])
+  childProfileId           String?
+  createdAt                DateTime      @default(now())
+  id                       String        @id @default(cuid())
+  name                     Int?
+  numberOfBedrooms         Int?
+  numberOfVacantRooms      Int?
+  postCode                 Int?
+  updatedAt                DateTime      @updatedAt
+}
+
+enum EnumChildProfileFloatingSupport {
+  Yes
+  No
+}
+
+enum EnumChildProfileGender {
+  Male
+  Female
+}
+
+enum EnumChildProfileSemiIndependentLiving {
+  Yes
+  No
+}
