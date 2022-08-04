@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Create, SimpleForm, CreateProps } from "react-admin";
+import { Create, SimpleForm, CreateProps, TextInput } from "react-admin";
 
 export const LocalAuthorityCreate = (
   props: CreateProps
@@ -7,7 +7,7 @@ export const LocalAuthorityCreate = (
   return (
     <Create {...props}>
       <SimpleForm>
-        <div />
+        <TextInput label="Name" source="name" />
       </SimpleForm>
     </Create>
   );

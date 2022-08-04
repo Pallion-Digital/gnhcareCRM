@@ -1,1 +1,3 @@
-export type LocalAuthorityCreateInput = {};
+export type LocalAuthorityCreateInput = {
+  name?: string | null;
+};

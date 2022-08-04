@@ -9,20 +9,13 @@ https://docs.amplication.com/docs/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { InputType, Field } from "@nestjs/graphql";
-import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional } from "class-validator";
-@InputType()
-class LocalAuthorityUpdateInput {
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  name?: string | null;
+import { ArgsType, Field } from "@nestjs/graphql";
+import { LocalAuthorityCreateInput } from "./LocalAuthorityCreateInput";
+
+@ArgsType()
+class CreateLocalAuthorityArgs {
+  @Field(() => LocalAuthorityCreateInput, { nullable: false })
+  data!: LocalAuthorityCreateInput;
 }
-export { LocalAuthorityUpdateInput };
+
+export { CreateLocalAuthorityArgs };
