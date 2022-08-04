@@ -1,7 +1,7 @@
 import { LocalAuthority as TLocalAuthority } from "../api/localAuthority/LocalAuthority";
 
-export const LOCALAUTHORITY_TITLE_FIELD = "id";
+export const LOCALAUTHORITY_TITLE_FIELD = "name";
 
 export const LocalAuthorityTitle = (record: TLocalAuthority): string => {
-  return record.id || record.id;
+  return record.name || record.id;
 };

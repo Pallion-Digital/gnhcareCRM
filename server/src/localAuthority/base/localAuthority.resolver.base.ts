@@ -18,6 +18,9 @@ import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { isRecordNotFoundError } from "../../prisma.util";
 import { MetaQueryPayload } from "../../util/MetaQueryPayload";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
+import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
+import { CreateLocalAuthorityArgs } from "./CreateLocalAuthorityArgs";
+import { UpdateLocalAuthorityArgs } from "./UpdateLocalAuthorityArgs";
 import { DeleteLocalAuthorityArgs } from "./DeleteLocalAuthorityArgs";
 import { LocalAuthorityFindManyArgs } from "./LocalAuthorityFindManyArgs";
 import { LocalAuthorityFindUniqueArgs } from "./LocalAuthorityFindUniqueArgs";
@@ -79,6 +82,47 @@ export class LocalAuthorityResolverBase {
       return null;
     }
     return result;
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => LocalAuthority)
+  @nestAccessControl.UseRoles({
+    resource: "LocalAuthority",
+    action: "create",
+    possession: "any",
+  })
+  async createLocalAuthority(
+    @graphql.Args() args: CreateLocalAuthorityArgs
+  ): Promise<LocalAuthority> {
+    return await this.service.create({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => LocalAuthority)
+  @nestAccessControl.UseRoles({
+    resource: "LocalAuthority",
+    action: "update",
+    possession: "any",
+  })
+  async updateLocalAuthority(
+    @graphql.Args() args: UpdateLocalAuthorityArgs
+  ): Promise<LocalAuthority | null> {
+    try {
+      return await this.service.update({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new apollo.ApolloError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => LocalAuthority)

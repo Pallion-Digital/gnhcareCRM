@@ -21,5 +21,6 @@ model User {
 model LocalAuthority {
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
+  name      String?
   updatedAt DateTime @updatedAt
 }
