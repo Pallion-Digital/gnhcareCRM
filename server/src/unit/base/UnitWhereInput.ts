@@ -55,6 +55,7 @@ class UnitWhereInput {
 
   @ApiProperty({
     required: false,
+<<<<<<< HEAD
     type: IntNullableFilter,
   })
   @Type(() => IntNullableFilter)
@@ -63,6 +64,16 @@ class UnitWhereInput {
     nullable: true,
   })
   name?: IntNullableFilter;
+=======
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  name?: StringFilter;
+>>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
 
   @ApiProperty({
     required: false,

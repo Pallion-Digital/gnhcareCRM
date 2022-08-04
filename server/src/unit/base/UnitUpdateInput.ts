@@ -41,6 +41,7 @@ class UnitUpdateInput {
 
   @ApiProperty({
     required: false,
+<<<<<<< HEAD
     type: Number,
   })
   @IsInt()
@@ -49,6 +50,16 @@ class UnitUpdateInput {
     nullable: true,
   })
   name?: number | null;
+=======
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  name?: string;
+>>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
 
   @ApiProperty({
     required: false,

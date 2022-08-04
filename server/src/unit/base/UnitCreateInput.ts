@@ -40,6 +40,7 @@ class UnitCreateInput {
   childProfile?: ChildProfileWhereUniqueInput | null;
 
   @ApiProperty({
+<<<<<<< HEAD
     required: false,
     type: Number,
   })
@@ -49,6 +50,14 @@ class UnitCreateInput {
     nullable: true,
   })
   name?: number | null;
+=======
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  name!: string;
+>>>>>>> 684be94395e655717b466a23a22fd2476256ef3e
 
   @ApiProperty({
     required: false,
