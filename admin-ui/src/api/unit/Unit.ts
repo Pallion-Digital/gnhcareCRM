@@ -5,7 +5,7 @@ export type Unit = {
   childProfile?: ChildProfile | null;
   createdAt: Date;
   id: string;
-  name: number | null;
+  name: string | null;
   numberOfBedrooms: number | null;
   numberOfVacantRooms: number | null;
   postCode: number | null;

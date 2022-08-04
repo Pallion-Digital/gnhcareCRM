@@ -55,7 +55,7 @@ model Unit {
   childProfileId           String?
   createdAt                DateTime      @default(now())
   id                       String        @id @default(cuid())
-  name                     Int?
+  name                     String?
   numberOfBedrooms         Int?
   numberOfVacantRooms      Int?
   postCode                 Int?
